@@ -20,8 +20,10 @@ Route::get('/events/{id}', [EventController::class, 'show']);
 Route::post('/events', [EventController::class, 'store']);
 Route::get('/contact', [EventController::class, 'contact']);
 
+Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
 
-Route::middleware([
+
+/* Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
@@ -30,3 +32,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+ */

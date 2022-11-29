@@ -17,7 +17,7 @@ class EventController extends Controller
         if($search){
             $events = Event::where([['title', 'like', '%'.$search.'%']])->get(); //lógica para a busca
         }else{
-            $events = Event::all();
+            $events = Event::all(); //traz os dados do banco de dados
         }
 
       
@@ -70,5 +70,13 @@ class EventController extends Controller
        $eventOwner = User::where('id', $event->user_id)->first()->toArray(); //pegando o usuaria do banco, informando que é o primeiro que achar e transformando os dados em array
 
         return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner]);
+    }
+
+    public function dashboard(){
+        $user = auth()->user();
+
+        $events = $user->events;
+        
+        return view('events.dashboard', ['events' => $events]);
     }
 }
