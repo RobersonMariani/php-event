@@ -20,11 +20,11 @@
     <div id="cards-container" class="row">
         @foreach($events as $event)
         <div class="card col-md-3">
-            <img src="/img/events/{{$event->image}}" alt="{{ $event->title }}">
+            <img src="/img/events/{{$event->image}}" alt="{{ $event->title }}">{{--mostrando a imagem--}}
             <div class="card-body">
-                <p class="card-date">{{date('d/m/Y', strtotime($event->date))}}</p>
-                <h5 class="card-title">{{$event->title}}</h5>
-                <p class="card-participants">X Participantes</p>
+                <p class="card-date">{{date('d/m/Y', strtotime($event->date))}}</p>{{--mostrando a data--}}
+                <h5 class="card-title">{{$event->title}}</h5>{{--mostrando o titulo--}}
+                <p class="card-participants">{{count($event->users)}} Participando</p>{{--mostrando o número dos participantes--}}
                 <a href="/events/{{$event->id}}" class="btn btn-primary" role="button">Saber Mais</a>
             </div>
         </div>

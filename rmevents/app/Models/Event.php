@@ -15,7 +15,13 @@ class Event extends Model
 
     protected $guarded = []; //falando que posso alerar tudo o que vem do Post
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo('App\Models\User'); //pertence a 1 usuario
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\User');
     }
 }
