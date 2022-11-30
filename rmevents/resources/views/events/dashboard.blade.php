@@ -24,7 +24,7 @@
                 <td scope="row">{{$loop->index + 1}}</td>
                 <td><a href="/events/{{$event->id}}">{{ucfirst($event->title)}}</a></td>
                 <td>0</td>
-                <td><a href="#" class="btn btn-info edit-btn">Editar</a><ion-con name="create-outfile"></ion-con>
+                <td><a href="/events/edit/{{$event->id}}" class="btn btn-info edit-btn">Editar</a><ion-con name="create-outfile"></ion-con>
                 <form action="/events/{{$event->id}}" method="POST">
                     @csrf
                     @method('DELETE')
