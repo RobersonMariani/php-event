@@ -43,6 +43,15 @@ header{
     padding: 10px;
 }
 
+div#info-container .already-joined-msg{
+    margin: 15px 0;
+    color: #004085;
+    background-color: #CCE5FF;
+    border: 1px solid #B8DAFF;
+    padding: 10px;
+    width: 275px;
+}
+
 nav.navbar{
     background-color: #353E48 !important;
     
@@ -189,10 +198,25 @@ nav.navbar{
 .dashboard-title-container{
     margin-bottom: 30px;
     margin-top: 30px;
+    padding-top: 50px;    
+}
+
+.dashboard-events-container{
+    padding-bottom: 50px;
 }
 
 .dashboard-events-container th{
-    width: 25%;
+    width: 25%;    
+}
+
+.dashboard-events-container tbody tr td a#levent{
+    color: #C28008;
+    text-decoration: none;
+}
+
+.dashboard-events-container tbody tr td a#levent:hover{
+    color: #F2A340;
+    text-decoration: underline;
 }
 
 .dashboard-events-container form{

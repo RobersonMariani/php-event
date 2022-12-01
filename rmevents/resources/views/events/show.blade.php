@@ -18,12 +18,16 @@
                 <ion-icon name="people-outline"></ion-icon>{{count($event->users)}} Participando
             </p>
             <p class="event-ower">
-                <ion-icon name="star-outline"></ion-icon> {{$eventOwner['name']}}<!-- {{$event->user->name}} -->
+                <ion-icon name="star-outline"></ion-icon> {{ucfirst($eventOwner['name'])}}{{-- {{$event->user->name}}  --}}
             </p>
+            @if(!$hasUserJoined)
             <form action="/events/join/{{$event->id}}" method="POST">
                 @csrf
                 <a href="/events/join/{{$event->id}}" class="btn btn-primary" id="event-submit" onclick="event.preventDefault();this.closest('form').submit();">Confirmar Presença</a>
             </form>
+            @else
+                <p class="already-joined-msg">Você já está participando deste Evento!</p>
+            @endif
             <h3>O evento conta com:</h3>
             <ul id="items-list" class="navbar-nav">
                 @foreach($event->items as $item)

@@ -19,7 +19,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="collapse navbar-collapse" id="navbar">
                         <a href="/" class="navbar-brand">
-                            <img src="/img/M2.svg" alt="HDC Events">
+                            <img src="/img/M2.svg" alt="RM Events">
                         </a>
                         <ul class="navbar-nav">
                             <li class="nav-item">
