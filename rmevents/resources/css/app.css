@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bgimg{
+    background-image: url('../img/event.jpg');
+    background-size: cover;    
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.616);
+}
